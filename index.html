@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>REDSearcher: A Scalable and Cost-Efficient Framework for Long-Horizon Search Agents</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Crimson+Text:400,600,700" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Noto Sans', sans-serif; color: #4a4a4a; }
+    .title.is-1 { 
+      font-family: 'Crimson Text', serif; 
+      font-weight: 700; 
+      font-size: 2.8rem;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+    body { background-color: #f8f9fa; }
+    .hero { background-color: #f8f9fa; }
+    .publication-authors { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .author-block a { color: #3273dc; font-weight: 500; }
+    .publication-links { margin-top: 1.5rem; }
+    .coming-soon { opacity: 0.6; cursor: not-allowed; }
+    .abstract-box { background-color: #ffffff; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    .section-title { margin-bottom: 2rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+    pre { background-color: #f5f5f5; padding: 1.5rem; border-radius: 5px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1">
+          REDSearcher: A Scalable and Cost-Efficient<br>Framework for Long-Horizon Search Agents
+        </h1>
+
+        <div class="publication-authors">
+          <span class="author-block"><a href="#">Zahu</a><sup>2†✉</sup>,</span>
+          <span class="author-block"><a href="#">Zbhu</a><sup>2*</sup>,</span>
+          <span class="author-block"><a href="#">Zchu</a><sup>3*</sup>,</span>
+          <span class="author-block"><a href="#">Zdhu</a><sup>3</sup>,</span>
+          <span class="author-block"><a href="#">Zehu</a><sup>4</sup>,</span>
+          <span class="author-block"><a href="#">Zfhu</a><sup>4</sup>,</span>
+          <span class="author-block"><a href="#">Zghu</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">Zhhu</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="#">Zihu</a><sup>2</sup>,</span>
+          <span class="author-block"><a href="#">Zjhu</a><sup>3</sup>,</span>
+          <span class="author-block"><a href="#">Zkhu</a><sup>4</sup>,</span>
+          <span class="author-block"><a href="#">Zlhu</a><sup>1</sup></span>
+        </div>
+
+        <div class="is-size-5">
+          <span class="author-block"><sup>1</sup>Xiaohongshu,</span>
+          <span class="author-block"><sup>2</sup>Tsinghua University,</span>
+          <span class="author-block"><sup>3</sup>Fudan University,</span>
+          <span class="author-block"><sup>4</sup>Harbin Institute of Technology</span>
+        </div>
+
+        <div class="is-size-6 mt-2" style="color: #666;">
+          <span><sup>*</sup>Equal Contribution</span>
+          <span class="ml-3"><sup>†</sup>Project Leader</span>
+          <span class="ml-3"><sup>✉</sup>Corresponding Author</span>
+        </div>
+
+        <div class="column has-text-centered publication-links">
+          <div class="buttons is-centered mb-2">
+            <a href="#" class="button is-dark is-rounded is-small">
+              <span class="icon"><i class="fas fa-file-pdf" style="color: #B31B1B;"></i></span><span>Paper</span>
+            </a>
+            <a href="#" class="button is-dark is-rounded is-small">
+              <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+            </a>
+            <span class="button is-dark is-rounded is-small coming-soon">
+              <span class="icon"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="HF" style="width: 1em; height: 1em;"></span><span>Model (Coming Soon)</span>
+            </span>
+          </div>
+          <div class="buttons is-centered">
+            <span class="button is-dark is-rounded is-small coming-soon">
+              <span class="icon"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="HF" style="width: 1em; height: 1em;"></span><span>SFT Dataset (Coming Soon)</span>
+            </span>
+            <span class="button is-dark is-rounded is-small coming-soon">
+              <span class="icon"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="HF" style="width: 1em; height: 1em;"></span><span>RL Dataset (Coming Soon)</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="content mt-4 mb-4" style="max-width: 900px; margin: 0 auto; text-align: center; font-size: 1rem; line-height: 1.8;">
+          <p style="margin-bottom: 0.5rem;"><span style="margin-right: 8px;">&#128736;</span> <b>Scalable task synthesis</b> via graph-structured reasoning with topological complexity control</p>
+          <p style="margin-bottom: 0.5rem;"><span style="margin-right: 8px;">&#128640;</span> <b>Cost-efficient training</b> via mid-training of core search-agent subskills</p>
+          <p><span style="margin-right: 8px;">&#127942;</span> <b>SOTA performance</b> across both text-only and multimodal benchmarks</p>
+        </div>
+
+        <div class="has-text-centered mt-4">
+          <img src="./static/images/SoTA_p3.png" alt="REDSearcher Results" style="width: 100%; max-width: 1100px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: #f8f9fa;">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" style="font-family: 'Noto Sans', sans-serif; font-weight: 600; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center;">
+        <span style="flex: 1; height: 2px; background: linear-gradient(to right, transparent, #7ba7bc); max-width: 150px; margin-right: 20px;"></span>
+        <span style="color: #4a6572;">Our Pipeline</span>
+        <span style="flex: 1; height: 2px; background: linear-gradient(to left, transparent, #7ba7bc); max-width: 150px; margin-left: 20px;"></span>
+      </h2>
+      <div class="has-text-centered">
+        <img src="./static/images/qa_generation_p2.png" alt="REDSearcher Pipeline" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+      </div>
+      <div class="content mt-4" style="max-width: 950px; margin: 1.5rem auto 0; text-align: left; font-size: 0.85rem; color: #5a6c7d; line-height: 1.6;">
+        <p style="margin: 0;"><b>Figure 2.</b> <b>QA Generation.</b> We construct directed acyclic graphs (DAGs) from Knowledge-Graph entities and Web-Walk hyperlinks, enabling explicit difficulty control via topological complexity. Each node is enriched with multi-source evidence, then sampled to form reasoning paths with <b>Query Fuzzing</b> (entity/attribute anonymization) to increase search challenge. <b>Verifier Pipeline.</b> A cascaded filter progressively validates quality: LLM difficulty check, QA-graph alignment, Google retrieval verification, hallucination detection, agent rollout confirmation, and answer uniqueness validation—producing 20K+ verified trajectories at &gt;85% accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: #f8f9fa;">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered" style="font-family: 'Noto Sans', sans-serif; font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+        <span style="flex: 1; height: 2px; background: linear-gradient(to right, transparent, #a8d5ba); max-width: 150px; margin-right: 20px;"></span>
+        <span style="color: #5a8a6e;">Performance</span>
+        <span style="flex: 1; height: 2px; background: linear-gradient(to left, transparent, #a8d5ba); max-width: 150px; margin-left: 20px;"></span>
+      </h2>
+      <p class="has-text-centered mb-5" style="color: #6b8e7b; font-size: 0.9rem; margin-top: 0.5rem;">Comparison between REDSearcher and closed / open agentic models</p>
+      
+      <div class="table-container" style="overflow-x: auto; font-family: 'Noto Sans', sans-serif;">
+        <table class="table" style="width: 100%; font-size: 0.82rem; border-collapse: collapse; margin: 0 auto;">
+          <thead>
+            <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+              <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">Model</th>
+              <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">BrowseComp</th>
+              <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">BrowseComp-zh</th>
+              <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">GAIA</th>
+              <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">HLE</th>
+              <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">Overall</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: #f1f5f9;">
+              <td colspan="6" style="padding: 8px; text-align: center; font-weight: 600; color: #475569; letter-spacing: 0.5px; border: none;">Proprietary Deep Research Agents</td>
+            </tr>
+            <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">Seed–1.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">67.6</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">81.3</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">87.4</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">40.9</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">69.3</td></tr>
+            <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">Gemini–2.5–pro–DR</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">7.6</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">27.3</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+            <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">Gemini–3–Pro</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">37.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">51.6</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">74.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">45.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">52.5</td></tr>
+            <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">Claude–4.5–sonnet</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">24.1</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">42.4</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">66.0</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">32.0</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">41.1</td></tr>
+            <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">OpenAI–o3</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">49.7</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">58.1</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">70.5</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">20.2</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">49.6</td></tr>
+            <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">GPT–5–Thinking–high</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">54.9</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">63.0</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">76.7</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">41.7</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">59.1</td></tr>
+            <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">GPT–5.2–Thinking–xhigh</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">65.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">76.1</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+            
+            <tr style="background-color: #f1f5f9;">
+              <td colspan="6" style="padding: 8px; text-align: center; font-weight: 600; color: #475569; letter-spacing: 0.5px; border: none;">Open-source Deep Research Agents</td>
+            </tr>
+            <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">Kimi–K2.5–Agent</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">60.6 / 74.9*</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">50.2</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+            <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">GLM–4.7</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">52.0 / 66.6*</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">- / 67.5*</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">42.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+            <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">DeepSeek–V3.2</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">51.4 / 67.6*</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">- / 65.0*</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">40.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+            <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">LongCat–Flash–Thinking</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">56.6 / 73.1*</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">69.0 / 77.7*</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+            
+            <tr style="background-color: #f1f5f9;">
+              <td colspan="6" style="padding: 8px; text-align: center; font-weight: 600; color: #475569; letter-spacing: 0.5px; border: none;">Open-source 30B–A3B Agents</td>
+            </tr>
+            <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">WebResearcher–30B</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">37.3</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">45.2</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">28.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+            <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">WebSailorV2–30B</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">35.3</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">44.1</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">74.1</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">30.6</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">46.0</td></tr>
+            <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">Tongyi DeepResearch–30B</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">43.4</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">46.7</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">70.9</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">32.9</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">48.5</td></tr>
+            <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">GLM–4.7–Flash</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">42.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+            <tr style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">REDSearcher</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">41.2 / <b>56.5</b>*</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">49.8 / <b>58.2</b>*</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;"><b>80.1</b></td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;"><b>33.3</b></td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;"><b>51.1</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="has-text-centered mt-3" style="color: #888; font-size: 0.75rem;">* Results with Context Management (CM). Best results in <b>bold</b>.</p>
+      
+      <div style="margin-top: 2.5rem;">
+        <p class="has-text-centered mb-4" style="color: #6b8e7b; font-size: 0.9rem;">Main results on multimodal search benchmarks</p>
+        
+        <div class="table-container" style="overflow-x: auto; font-family: 'Noto Sans', sans-serif;">
+          <table class="table" style="width: 100%; font-size: 0.75rem; border-collapse: collapse; margin: 0 auto;">
+            <thead>
+              <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none; white-space: nowrap;">Model</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">MM-BrowseComp</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">BrowseComp-VL</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">MMSearchPlus</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">MMSearch</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">LiveVQA</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">HLE(text)</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">HLE-VL</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">BrowseComp</th>
+                <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">BrowseComp-ZH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color: #f1f5f9;">
+                <td colspan="10" style="padding: 6px; text-align: center; font-weight: 600; color: #475569; letter-spacing: 0.5px; border: none; font-size: 0.7rem;">Proprietary Deep Research Agents</td>
+              </tr>
+              <tr style="background-color: #fafafa;"><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Gemini-2.5-Flash</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">5.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">44.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">19.9</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">64.0</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">73.0</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+              <tr><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Gemini-2.5-Pro</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">7.1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">49.9</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">22.2</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">69.0</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">76.0</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">7.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">27.3</td></tr>
+              <tr style="background-color: #fafafa;"><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Seed1.8</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">46.3</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">40.9</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">31.5</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">67.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">81.3</td></tr>
+              <tr><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Seed1.8<sup>†</sup></td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">21.4</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">54.1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">11.0</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">69.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">62.4</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+              <tr style="background-color: #fafafa;"><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">GPT-5</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">46.1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">17.2</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">63.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">73.3</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">41.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">54.9</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">63.0</td></tr>
+              <tr><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Gemini-3-Pro<sup>†</sup></td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">28.5</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">56.4</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">38.1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">73.0</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">79.9</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">45.8*</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">36.0*</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">37.8*</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">51.6*</td></tr>
+              
+              <tr style="background-color: #f1f5f9;">
+                <td colspan="10" style="padding: 6px; text-align: center; font-weight: 600; color: #475569; letter-spacing: 0.5px; border: none; font-size: 0.7rem;">Multimodal Agent Flow</td>
+              </tr>
+              <tr style="background-color: #fafafa;"><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Qwen2.5-VL</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">1.8</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">10.2</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">29.2</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">35.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">4.9</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+              <tr><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Qwen3-VL (30B)</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">10.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">37.1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">11.0</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">59.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">64.8</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">8.8</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">8.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">0.2</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">7.2</td></tr>
+              <tr style="background-color: #fafafa;"><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Qwen3-VL (235B)</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">12.1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">43.1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">17.4</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">63.3</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">70.2</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">14.5</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">14.1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">0.3</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">18.6</td></tr>
+              
+              <tr style="background-color: #f1f5f9;">
+                <td colspan="10" style="padding: 6px; text-align: center; font-weight: 600; color: #475569; letter-spacing: 0.5px; border: none; font-size: 0.7rem;">Multimodal DeepResearch Agent</td>
+              </tr>
+              <tr style="background-color: #fafafa;"><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">MMSearch-R1</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">53.8</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">48.4</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+              <tr><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">WebWatcher</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">27.0</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">55.3</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">58.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">13.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+              <tr style="background-color: #fafafa;"><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">DeepEyesV2</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">63.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+              <tr><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Vision-DeepResearch</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">53.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">28.5</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">69.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">77.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
+              
+              <tr style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">REDSearcher-MM-SFT</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">25.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">55.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">20.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">70.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">78.5</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">24.4</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">24.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">30.1</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">43.1</td></tr>
+              <tr style="background: linear-gradient(135deg, #fed7aa 0%, #fb923c 100%);"><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">REDSearcher-MM-RL</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">23.5</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">57.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">26.6</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">72.9</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">79.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">25.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">25.6</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">31.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">44.5</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="has-text-centered mt-2" style="color: #888; font-size: 0.7rem;">† denotes results evaluated using the same evaluation tools as ours, and * denotes results taken from the original papers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color: #f8f9fa;">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 section-title" style="font-family: 'Noto Sans', sans-serif;">BibTeX</h2>
+      <pre><code>@article{redsearcher2026,
+  title={REDSearcher: A Scalable and Cost-Efficient Framework for Long-Horizon Search Agents},
+  author={Zahu and Zbhu and Zchu and others},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer" style="padding: 2rem 1.5rem 2rem; background-color: #ffffff;">
+    <div class="content has-text-centered">
+      <p>
+        Hi Lab Post-train Team
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
