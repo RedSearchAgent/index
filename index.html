@@ -40,31 +40,24 @@
         </h1>
 
         <div class="publication-authors">
-          <span class="author-block"><a href="#">Zahu</a><sup>2†✉</sup>,</span>
-          <span class="author-block"><a href="#">Zbhu</a><sup>2*</sup>,</span>
-          <span class="author-block"><a href="#">Zchu</a><sup>3*</sup>,</span>
-          <span class="author-block"><a href="#">Zdhu</a><sup>3</sup>,</span>
-          <span class="author-block"><a href="#">Zehu</a><sup>4</sup>,</span>
-          <span class="author-block"><a href="#">Zfhu</a><sup>4</sup>,</span>
-          <span class="author-block"><a href="#">Zghu</a><sup>1</sup>,</span>
-          <span class="author-block"><a href="#">Zhhu</a><sup>1</sup>,</span>
-          <span class="author-block"><a href="#">Zihu</a><sup>2</sup>,</span>
-          <span class="author-block"><a href="#">Zjhu</a><sup>3</sup>,</span>
-          <span class="author-block"><a href="#">Zkhu</a><sup>4</sup>,</span>
-          <span class="author-block"><a href="#">Zlhu</a><sup>1</sup></span>
-        </div>
-
-        <div class="is-size-5">
-          <span class="author-block"><sup>1</sup>Xiaohongshu,</span>
-          <span class="author-block"><sup>2</sup>Tsinghua University,</span>
-          <span class="author-block"><sup>3</sup>Fudan University,</span>
-          <span class="author-block"><sup>4</sup>Harbin Institute of Technology</span>
+          <span class="author-block"><a href="#" style="color: #2563eb;">Zheng Chu</a><sup>*</sup>,</span>
+          <span class="author-block"><a href="#" style="color: #2563eb;">Xiao Wang</a><sup>*</sup>,</span>
+          <span class="author-block"><a href="#" style="color: #2563eb;">Jack Hong</a><sup>*</sup>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Huiming Fan</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Yuqi Huang</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Yue Yang</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Guohai Xu</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Shengchao Hu</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Dongdong Kuang</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Chenxiao Zhao</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Cheng Xiang</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Ming Liu</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Bing Qin</a>,</span>
+          <span class="author-block"><a href="#" style="color: #1a1a1a;">Xing Yu</a></span>
         </div>
 
         <div class="is-size-6 mt-2" style="color: #666;">
           <span><sup>*</sup>Equal Contribution</span>
-          <span class="ml-3"><sup>†</sup>Project Leader</span>
-          <span class="ml-3"><sup>✉</sup>Corresponding Author</span>
         </div>
 
         <div class="column has-text-centered publication-links">
@@ -104,33 +97,36 @@
 
   <section class="section" style="background-color: #f8f9fa;">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered" style="font-family: 'Noto Sans', sans-serif; font-weight: 600; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center;">
-        <span style="flex: 1; height: 2px; background: linear-gradient(to right, transparent, #7ba7bc); max-width: 150px; margin-right: 20px;"></span>
-        <span style="color: #4a6572;">Our Pipeline</span>
-        <span style="flex: 1; height: 2px; background: linear-gradient(to left, transparent, #7ba7bc); max-width: 150px; margin-left: 20px;"></span>
-      </h2>
-      <div class="has-text-centered">
-        <img src="./static/images/qa_generation_p2.png" alt="REDSearcher Pipeline" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-      </div>
-      <div class="content mt-4" style="max-width: 950px; margin: 1.5rem auto 0; text-align: left; font-size: 0.85rem; color: #5a6c7d; line-height: 1.6;">
-        <p style="margin: 0;"><b>Figure 2.</b> <b>QA Generation.</b> We construct directed acyclic graphs (DAGs) from Knowledge-Graph entities and Web-Walk hyperlinks, enabling explicit difficulty control via topological complexity. Each node is enriched with multi-source evidence, then sampled to form reasoning paths with <b>Query Fuzzing</b> (entity/attribute anonymization) to increase search challenge. <b>Verifier Pipeline.</b> A cascaded filter progressively validates quality: LLM difficulty check, QA-graph alignment, Google retrieval verification, hallucination detection, agent rollout confirmation, and answer uniqueness validation—producing 20K+ verified trajectories at &gt;85% accuracy.</p>
+      <div style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+        <h2 class="title is-3 has-text-centered" style="font-family: 'Noto Sans', sans-serif; font-weight: 600; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center;">
+          <span style="flex: 1; height: 2px; background: linear-gradient(to right, transparent, #7ba7bc); max-width: 150px; margin-right: 20px;"></span>
+          <span style="color: #4a6572;">Our Pipeline</span>
+          <span style="flex: 1; height: 2px; background: linear-gradient(to left, transparent, #7ba7bc); max-width: 150px; margin-left: 20px;"></span>
+        </h2>
+        <div class="has-text-centered">
+          <img src="./static/images/qa_generation_p2.png" alt="REDSearcher Pipeline" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div class="content mt-4" style="max-width: 950px; margin: 1.5rem auto 0; text-align: left; font-size: 0.85rem; color: #5a6c7d; line-height: 1.6;">
+          <p style="margin: 0;"><b>Figure 2.</b> <b>QA Generation.</b> We construct directed acyclic graphs (DAGs) from Knowledge-Graph entities and Web-Walk hyperlinks, enabling explicit difficulty control via topological complexity. Each node is enriched with multi-source evidence, then sampled to form reasoning paths with <b>Query Fuzzing</b> (entity/attribute anonymization) to increase search challenge. <b>Verifier Pipeline.</b> A cascaded filter progressively validates quality: LLM difficulty check, QA-graph alignment, Google retrieval verification, hallucination detection, agent rollout confirmation, and answer uniqueness validation—producing 20K+ verified trajectories at &gt;85% accuracy.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section" style="background-color: #f8f9fa;">
     <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered" style="font-family: 'Noto Sans', sans-serif; font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
-        <span style="flex: 1; height: 2px; background: linear-gradient(to right, transparent, #a8d5ba); max-width: 150px; margin-right: 20px;"></span>
-        <span style="color: #5a8a6e;">Performance</span>
-        <span style="flex: 1; height: 2px; background: linear-gradient(to left, transparent, #a8d5ba); max-width: 150px; margin-left: 20px;"></span>
-      </h2>
-      <p class="has-text-centered mb-5" style="color: #6b8e7b; font-size: 0.9rem; margin-top: 0.5rem;">Comparison between REDSearcher and closed / open agentic models</p>
-      
-      <div class="table-container" style="overflow-x: auto; font-family: 'Noto Sans', sans-serif;">
-        <table class="table" style="width: 100%; font-size: 0.82rem; border-collapse: collapse; margin: 0 auto;">
+      <div style="background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+        <h2 class="title is-3 has-text-centered" style="font-family: 'Noto Sans', sans-serif; font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: center; justify-content: center;">
+          <span style="flex: 1; height: 2px; background: linear-gradient(to right, transparent, #a8d5ba); max-width: 150px; margin-right: 20px;"></span>
+          <span style="color: #5a8a6e;">Performance</span>
+          <span style="flex: 1; height: 2px; background: linear-gradient(to left, transparent, #a8d5ba); max-width: 150px; margin-left: 20px;"></span>
+        </h2>
+        <p class="has-text-centered mb-5" style="color: #6b8e7b; font-size: 0.9rem; margin-top: 0.5rem;">Comparison between REDSearcher and closed / open agentic models</p>
+        
+        <div class="table-container" style="overflow-x: auto; font-family: 'Noto Sans', sans-serif;">
+        <table class="table" style="width: 100%; font-size: 0.9rem; border-collapse: collapse; margin: 0 auto;">
           <thead>
-            <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <tr style="background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); color: #475569;">
               <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">Model</th>
               <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">BrowseComp</th>
               <th style="padding: 12px 8px; text-align: center; font-weight: 600; border: none;">BrowseComp-zh</th>
@@ -166,7 +162,7 @@
             <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">WebSailorV2–30B</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">35.3</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">44.1</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">74.1</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">30.6</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">46.0</td></tr>
             <tr style="background-color: #fafafa;"><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">Tongyi DeepResearch–30B</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">43.4</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">46.7</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">70.9</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">32.9</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">48.5</td></tr>
             <tr><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">GLM–4.7–Flash</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">42.8</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 10px 8px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
-            <tr style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">REDSearcher</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">41.2 / <b>56.5</b>*</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">49.8 / <b>58.2</b>*</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;"><b>80.1</b></td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;"><b>33.3</b></td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;"><b>51.1</b></td></tr>
+            <tr style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);"><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #1e40af; border-bottom: 2px solid #60a5fa;">REDSearcher</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">41.2 / <b>56.5</b>*</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">49.8 / <b>58.2</b>*</td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;"><b>80.1</b></td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;"><b>33.3</b></td><td style="padding: 10px 8px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;"><b>51.1</b></td></tr>
           </tbody>
         </table>
       </div>
@@ -176,9 +172,9 @@
         <p class="has-text-centered mb-4" style="color: #6b8e7b; font-size: 0.9rem;">Main results on multimodal search benchmarks</p>
         
         <div class="table-container" style="overflow-x: auto; font-family: 'Noto Sans', sans-serif;">
-          <table class="table" style="width: 100%; font-size: 0.75rem; border-collapse: collapse; margin: 0 auto;">
+          <table class="table" style="width: 100%; font-size: 0.85rem; border-collapse: collapse; margin: 0 auto;">
             <thead>
-              <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+              <tr style="background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); color: #475569;">
                 <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none; white-space: nowrap;">Model</th>
                 <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">MM-BrowseComp</th>
                 <th style="padding: 10px 6px; text-align: center; font-weight: 600; border: none;">BrowseComp-VL</th>
@@ -217,12 +213,13 @@
               <tr style="background-color: #fafafa;"><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">DeepEyesV2</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">63.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
               <tr><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">Vision-DeepResearch</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">53.7</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">28.5</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">69.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">77.6</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td><td style="padding: 8px 6px; text-align: center; border-bottom: 1px solid #e2e8f0;">-</td></tr>
               
-              <tr style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">REDSearcher-MM-SFT</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">25.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">55.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">20.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">70.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">78.5</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">24.4</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">24.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">30.1</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ed8936;">43.1</td></tr>
-              <tr style="background: linear-gradient(135deg, #fed7aa 0%, #fb923c 100%);"><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">REDSearcher-MM-RL</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">23.5</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">57.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">26.6</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">72.9</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">79.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">25.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">25.6</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">31.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #c05621; border-bottom: 2px solid #ea580c;">44.5</td></tr>
+              <tr style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);"><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1e40af; border-bottom: 1px solid #e2e8f0;">REDSearcher-MM-SFT</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">25.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">55.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">20.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">70.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">78.5</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">24.4</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">24.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">30.1</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 1px solid #e2e8f0;">43.1</td></tr>
+              <tr style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);"><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1e40af; border-bottom: 2px solid #60a5fa;">REDSearcher-MM-RL</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">23.5</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">57.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">26.6</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">72.9</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">79.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">25.3</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">25.6</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">31.2</td><td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #1a1a1a; border-bottom: 2px solid #60a5fa;">44.5</td></tr>
             </tbody>
           </table>
         </div>
         <p class="has-text-centered mt-2" style="color: #888; font-size: 0.7rem;">† denotes results evaluated using the same evaluation tools as ours, and * denotes results taken from the original papers.</p>
+      </div>
       </div>
     </div>
   </section>
