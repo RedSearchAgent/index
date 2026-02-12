@@ -30,8 +30,8 @@ def convert_first_page_to_image(pdf_path, output_path, zoom_x=2, zoom_y=2):
 
 # 调用函数进行高质量转换（使用3倍缩放）
 convert_first_page_to_image(
-    "/cpfs/user/fanhuiming/index/static/pdf/SoTA_p4.pdf",
-    "/cpfs/user/fanhuiming/index/static/images/SoTA_p4.png",
+    "/cpfs/user/fanhuiming/index/static/pdf/BrowseComp.pdf",
+    "/cpfs/user/fanhuiming/index/static/images/SoTA_p5.png",
     zoom_x=3,
     zoom_y=3
 )
